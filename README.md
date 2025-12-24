@@ -2,7 +2,7 @@
 
 A simple, feature-rich drawing application built using Java Swing, designed to mimic the functionality of classic painting tools. This project demonstrates object-oriented design principles in Java, utilizing separate classes for the canvas, control panel, and different drawable shapes.
 
-## ✨ Features
+## Features
 
 The application provides a full set of drawing tools and controls, organized by category:
 
@@ -34,7 +34,7 @@ To compile and run this application, you need:
 *   **Java Development Kit (JDK)**: Version 8 or higher.
 *   **Java Swing**: Included in the standard JDK.
 
-## 📁 File Structure
+## File Structure
 
 The project is structured into multiple files, with each class in its own file for clarity and maintainability:
 
@@ -48,7 +48,7 @@ The project is structured into multiple files, with each class in its own file f
 *   **`DrawnOval.java`**: Implementation for drawing an oval (outlined or solid).
 *   **`PencilStroke.java`**: Implementation for freehand drawing and erasing (stores a list of points).
 
-## 🚀 Installation and Running
+## Installation and Running
 
 Follow these steps to get the application running on your local machine.
 
@@ -72,7 +72,7 @@ Execute the main class:
 java MyPainter
 ```
 
-## 📝 Usage
+## Usage
 
 1.  **Select a Mode:** Click on a mode button (e.g., `Line`, `Rectangle`, `Pencil`).
 2.  **Select Style/Color:** Choose a color and toggle the `Solid` or `Dotted` checkboxes as desired.
