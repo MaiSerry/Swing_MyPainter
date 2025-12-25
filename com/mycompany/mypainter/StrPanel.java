@@ -123,6 +123,7 @@ public class StrPanel extends JPanel {
         });
         add(dottedCheck);
 
+        // Separator Between Colors and Buttons
         add(new JLabel(" | "));
 
         // --- Colors ---
@@ -148,7 +149,8 @@ public class StrPanel extends JPanel {
         // Separator Between Colors and Buttons
         add(new JLabel(" | "));
 
-        // --- Bonus Buttons (Placeholder) ---
+        // --- Bonus Buttons 
+        // OpenButton
         openButton = new JButton("OPEN");
         openButton.addActionListener(e -> {
             JFileChooser fileChooser = new JFileChooser();
@@ -164,6 +166,7 @@ public class StrPanel extends JPanel {
         });
         add(openButton);
 
+        // SaveButton
         saveButton = new JButton("SAVE");
         saveButton.addActionListener(e -> {
             // To choose where to cave
