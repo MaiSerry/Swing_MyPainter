@@ -10,7 +10,12 @@ package com.mycompany.mypainter;
  */
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 // Structure Class
 public class StrPanel extends JPanel {
@@ -35,13 +40,12 @@ public class StrPanel extends JPanel {
     JButton undoButton;
 
     // CheckBox Buttons (using JCheckBox for Swing consistency)
-    JCheckBox solidCheck;
-    JCheckBox dottedCheck;
+    JRadioButton solidCheck;
+    JRadioButton dottedCheck;
 
     // Bonus Buttons (Placeholder functionality)
     JButton saveButton;
     JButton openButton;
-
 
     public StrPanel(Canvas canvas) {
         this.canvas = canvas;
@@ -95,12 +99,28 @@ public class StrPanel extends JPanel {
         add(eraserButton);
 
         // --- Style (Solid/Dotted) ---
-        solidCheck = new JCheckBox("Solid");
-        solidCheck.addActionListener(e -> canvas.setSolid(solidCheck.isSelected()));
+        solidCheck = new JRadioButton("Solid");
+        solidCheck.addActionListener(e -> {
+            if (solidCheck.isSelected()) {
+                dottedCheck.setSelected(false); // deselect the other
+                canvas.setSolid(true);
+                canvas.setDotted(false);
+            } else {
+                canvas.setSolid(false);
+            }
+        });
         add(solidCheck);
 
-        dottedCheck = new JCheckBox("Dotted");
-        dottedCheck.addActionListener(e -> canvas.setDotted(dottedCheck.isSelected()));
+        dottedCheck = new JRadioButton("Dotted");
+        dottedCheck.addActionListener(e -> {
+            if (dottedCheck.isSelected()) {
+                solidCheck.setSelected(false); // deselect the other
+                canvas.setDotted(true);
+                canvas.setSolid(false);
+            } else {
+                canvas.setDotted(false);
+            }
+        });
         add(dottedCheck);
 
         // --- Colors ---
@@ -123,15 +143,60 @@ public class StrPanel extends JPanel {
         blueButton = createColorButton(Color.BLUE, "Blue", canvas);
         add(blueButton);
 
+        // Separator Between Colors and Buttons
+        add(new JLabel(" | "));
+
         // --- Bonus Buttons (Placeholder) ---
-        add(new JLabel(" | ")); // Separator
+        openButton = new JButton("OPEN");
+        openButton.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                    "Image Files", "jpg", "jpeg", "png", "gif", "bmp");
+            fileChooser.setFileFilter(filter);
+
+            int result = fileChooser.showOpenDialog(StrPanel.this); // To Check Image Filtration
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                canvas.loadImage(selectedFile);
+            }
+        });
+        add(openButton);
+
         saveButton = new JButton("SAVE");
-        saveButton.addActionListener(e -> JOptionPane.showMessageDialog(this, "Save functionality not implemented."));
+        saveButton.addActionListener(e -> {
+            // To choose where to cave
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Save Canvas As Image");
+            fileChooser.setSelectedFile(new File("drawing.png"));
+            int result = fileChooser.showSaveDialog(this);
+
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                // --- Important: capture only the Canvas, not the toolbar ---
+                BufferedImage image = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_ARGB);
+                Graphics2D g2 = image.createGraphics();
+
+                // optional: fill background
+                g2.setColor(canvas.getBackground());
+                g2.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+                // Draw the panel on the BufferedImage
+                canvas.paintComponent(g2);
+                g2.dispose();
+
+                try {
+                    // Save as PNG
+                    ImageIO.write(image, "png", fileToSave);
+                    JOptionPane.showMessageDialog(this, "Saved successfully!");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(this, "Error saving file: " + ex.getMessage());
+                }
+            }
+        });
         add(saveButton);
 
-        openButton = new JButton("OPEN");
-        openButton.addActionListener(e -> JOptionPane.showMessageDialog(this, "Open functionality not implemented."));
-        add(openButton);
     }
 
     private JButton createColorButton(Color color, String name, Canvas canvas) {
