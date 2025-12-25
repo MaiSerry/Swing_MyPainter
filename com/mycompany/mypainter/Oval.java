@@ -13,8 +13,8 @@ import java.awt.Stroke;
  *
  * @author HELLo
  */
-
 class Oval extends Shape {
+
     private boolean isSolid;
 
     public Oval(int x1, int y1, int x2, int y2, Color color, Stroke stroke, boolean isSolid) {
@@ -36,8 +36,5 @@ class Oval extends Shape {
             g2d.drawOval(x, y, width, height);
         }
     }
-    
-    
-    
-    
+
 }
