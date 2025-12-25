@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.mypainter;
 
 import java.awt.BorderLayout;
@@ -14,8 +13,8 @@ import javax.swing.SwingUtilities;
  */
 public class MyPainter {
 
-     public static void main(String[] args) {
-        // Use SwingUtilities.invokeLater for thread safety
+    public static void main(String[] args) {
+
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("My Painter");
             Canvas canvas = new Canvas();
