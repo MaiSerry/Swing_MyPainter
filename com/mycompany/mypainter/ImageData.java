@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
 public class ImageData {
 
     public BufferedImage image;
-    public int x, y; // position of the image
+    public int x, y;
 
     public ImageData(BufferedImage image, int x, int y) {
         this.image = image;
