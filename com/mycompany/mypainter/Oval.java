@@ -24,6 +24,7 @@ class Oval extends Shape {
 
     @Override
     public void draw(Graphics g) {
+
         Graphics2D g2d = setupGraphics(g);
         int x = Math.min(x1, x2);
         int y = Math.min(y1, y2);
