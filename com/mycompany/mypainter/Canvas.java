@@ -26,10 +26,12 @@ public class Canvas extends JPanel {
     private boolean isSolid = false;
     private boolean isDotted = false;
 
+    // List to hold more than oen image
     private List<ImageData> images = new ArrayList<>();
     private ImageData selectedImage = null;
 
-    private int x1, y1; // Start point for shapes
+    // Start point for shapes
+    private int x1, y1;
     private boolean dragImage = false;
     private int offsetX, offsetY;
 
@@ -49,7 +51,7 @@ public class Canvas extends JPanel {
                 int mx = e.getX();
                 int my = e.getY();
 
-                // Check if mouse is on any image (topmost first)
+                // Check if mouse is on any image 
                 selectedImage = null;
                 for (int i = images.size() - 1; i >= 0; i--) {
                     ImageData data = images.get(i);

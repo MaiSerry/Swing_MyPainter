@@ -53,7 +53,7 @@ public class StrPanel extends JPanel {
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         // --- Functions ---
-        add(new JLabel("Functions:"));
+        add(new JLabel("Functions:  "));
         clearButton = new JButton("Clear");
         clearButton.addActionListener(e -> canvas.clear());
         add(clearButton);
@@ -63,7 +63,7 @@ public class StrPanel extends JPanel {
         add(undoButton);
 
         // --- Paint Mode ---
-        add(new JLabel("Paint Mode:"));
+        add(new JLabel("    Paint Mode:  "));
         ButtonGroup modeGroup = new ButtonGroup();
 
         // Helper to create mode buttons
@@ -123,8 +123,10 @@ public class StrPanel extends JPanel {
         });
         add(dottedCheck);
 
+        add(new JLabel(" | "));
+
         // --- Colors ---
-        add(new JLabel("Colors:"));
+        add(new JLabel("  Colors:  "));
 
         // Black Button (Default color)
         blackButton = createColorButton(Color.WHITE, "WHITE", canvas);
@@ -220,4 +222,5 @@ public class StrPanel extends JPanel {
         });
         return button;
     }
+
 }
