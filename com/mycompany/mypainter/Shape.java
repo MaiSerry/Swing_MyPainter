@@ -13,7 +13,8 @@ import java.awt.Stroke;
  *
  * @author HELLo
  */
-abstract class Shape  {
+abstract class Shape {
+
     protected int x1, y1, x2, y2;
     protected Color color;
     protected Stroke stroke;
@@ -29,15 +30,13 @@ abstract class Shape  {
         this.color = color;
         this.stroke = stroke;
     }
-    
- public Graphics2D setupGraphics(Graphics g) {
+
+    public Graphics2D setupGraphics(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(color);
         g2d.setStroke(stroke);
         return g2d;
     }
- 
 
-
- public abstract void draw(Graphics g);
+    public abstract void draw(Graphics g);
 }
