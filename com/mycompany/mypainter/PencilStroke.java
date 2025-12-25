@@ -7,25 +7,24 @@ package com.mycompany.mypainter;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.List;
 import java.awt.Point;
 import java.awt.Stroke;
 import java.util.ArrayList;
-
+import java.util.List;
 
 /**
  *
  * @author HELLo
  */
-
 public class PencilStroke extends Shape {
+
     private List<Point> points = new ArrayList<>();
     private Color color;
     private Stroke stroke;
 
     public PencilStroke(Color color, Stroke stroke) {
-    this.color = color;
-    this.stroke = stroke;
+        this.color = color;
+        this.stroke = stroke;
     }
 
     public void addPoint(int x, int y) {
