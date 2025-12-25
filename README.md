@@ -70,6 +70,8 @@ java MyPainter
 1.  **Select a Mode:** Click on a mode button (e.g., `Line`, `Rectangle`, `Pencil`).
 2.  **Select Style/Color:** Choose a color and toggle the `Solid` or `Dotted` radioboxes as desired.
 3.  **Draw:** Click and drag the mouse on the white canvas area.
-4.  **Manage:** Use the `Undo` button to reverse the last action or `Clear` to wipe the canvas clean.
-5.  **Save:** Use the `Save` button to save all drawings in your panel.
-6.  **Open:** Use the `Open` button to drag one or more images from your local PC.
+   <img width="1431" height="641" alt="image" src="https://github.com/user-attachments/assets/4783aaa8-6fb6-49a7-a117-625d4733ff63" />
+
+5.  **Manage:** Use the `Undo` button to reverse the last action or `Clear` to wipe the canvas clean.
+6.  **Save:** Use the `Save` button to save all drawings in your panel.
+7.  **Open:** Use the `Open` button to drag one or more images from your local PC.
