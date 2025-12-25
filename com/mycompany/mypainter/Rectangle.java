@@ -13,14 +13,15 @@ import java.awt.Stroke;
  *
  * @author HELLo
  */
-
 public class Rectangle extends Shape {
+
     private boolean isSolid;
 
     public Rectangle(int x1, int y1, int x2, int y2, Color color, Stroke stroke, boolean isSolid) {
         super(x1, y1, x2, y2, color, stroke);
         this.isSolid = isSolid;
     }
+
     @Override
     public void draw(Graphics g) {
         Graphics2D g2d = setupGraphics(g);
