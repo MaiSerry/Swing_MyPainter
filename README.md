@@ -72,9 +72,13 @@ java MyPainter
 3.  **Draw:** Click and drag the mouse on the white canvas area.
    <img width="1431" height="641" alt="image" src="https://github.com/user-attachments/assets/4783aaa8-6fb6-49a7-a117-625d4733ff63" />
 
+
+
 5.  **Manage:** Use the `Undo` button to reverse the last action or `Clear` to wipe the canvas clean.
 6.  **Open:** Use the `Open` button to drag one or more images from your local PC.
    <img width="1426" height="553" alt="image" src="https://github.com/user-attachments/assets/2273d0b9-4ac8-474f-a7dd-a16413a5472e" />
+
+
    
 7.  **Save:** Use the `Save` button to save all drawings in your panel.
    <img width="1244" height="750" alt="image" src="https://github.com/user-attachments/assets/336aaf09-f6f2-46be-8383-953cf23638ad" />
