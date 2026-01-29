@@ -7,16 +7,16 @@ This project demonstrates solid **object-oriented design**, separating UI, canva
 
 ---
 
-## ✨ Features
+## Features
 
-### 🖌 Drawing Tools
+### Drawing Tools
 - **Line** – Draw straight lines
 - **Rectangle** – Draw rectangles (solid or outline)
 - **Oval** – Draw ovals (solid or outline)
 - **Pencil** – Freehand drawing
 - **Eraser** – Freehand erasing
 
-### 🎨 Styles
+### Styles
 - **Solid / Outline** toggle
 - **Dotted / Solid stroke** toggle
 - Color selection:
@@ -25,11 +25,11 @@ This project demonstrates solid **object-oriented design**, separating UI, canva
   - Green
   - Blue
 
-### 🧩 Canvas Utilities
+### Canvas Utilities
 - **Undo** – Removes the last drawn action
 - **Clear** – Clears the entire canvas
 
-### 💾 File Operations
+### File Operations
 - **SAVE**
   - Exports the full canvas as an image
   - Captures **all drawings, shapes, and inserted images**
@@ -40,19 +40,19 @@ This project demonstrates solid **object-oriented design**, separating UI, canva
 
 ---
 
-## 🛠 Requirements
+## Requirements
 
 - **Java Development Kit (JDK)** 8 or higher
 - **Java Swing** (included with JDK)
 
 ---
 
-## ▶️ Installation & Running
+## Installation & Running
 
-### 1️⃣ Save Files
+### 1️. Save Files
 Ensure all `.java` files are placed in the same directory.
 
-### 2️⃣ Compile
+### 2. Compile
 ```bash
 javac *.java
 ```
